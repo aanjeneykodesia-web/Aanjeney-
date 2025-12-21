@@ -17,24 +17,35 @@ class _AdminDashboardState extends State<AdminDashboard> {
       appBar: AppBar(title: const Text("Admin Dashboard")),
       body: Column(
         children: [
-          TextField(controller: nameCtrl, decoration: const InputDecoration(labelText: "Product Name")),
-          TextField(controller: qtyCtrl, decoration: const InputDecoration(labelText: "Quantity")),
+          TextField(
+            controller: nameCtrl,
+            decoration: const InputDecoration(labelText: "Product Name"),
+          ),
+          TextField(
+            controller: qtyCtrl,
+            decoration: const InputDecoration(labelText: "Quantity"),
+            keyboardType: TextInputType.number,
+          ),
           ElevatedButton(
             onPressed: () {
               setState(() {
-                products.add(Product(nameCtrl.text, int.parse(qtyCtrl.text)));
+                products.add(
+                  Product(nameCtrl.text, int.parse(qtyCtrl.text)),
+                );
               });
             },
             child: const Text("Add Product"),
           ),
           Expanded(
             child: ListView(
-              children: products.map((p) => ListTile(
-                title: Text(p.name),
-                trailing: Text(p.quantity.toString()),
-              )).toList(),
+              children: products
+                  .map((p) => ListTile(
+                        title: Text(p.name),
+                        trailing: Text(p.quantity.toString()),
+                      ))
+                  .toList(),
             ),
-          )
+          ),
         ],
       ),
     );
