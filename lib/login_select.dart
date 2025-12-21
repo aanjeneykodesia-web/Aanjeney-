@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'admin_dashboard.dart';
-import 'shopkeeper_dashboard.dart';
-import 'transporter_page.dart';
+import 'shopkeeper_login.dart';
+import 'manufacturer_login.dart';
+import 'transporter_login.dart';
+import 'admin_login.dart';
 
 class LoginSelect extends StatelessWidget {
-  const LoginSelect({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,18 +13,19 @@ class LoginSelect extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _btn(context, "Admin", const AdminDashboard()),
-            _btn(context, "Shopkeeper", const ShopkeeperDashboard()),
-            _btn(context, "Transporter", const TransporterPage()),
+            btn(context, "Shopkeeper", ShopkeeperLogin()),
+            btn(context, "Manufacturer", ManufacturerLogin()),
+            btn(context, "Transporter", TransporterLogin()),
+            btn(context, "Admin", AdminLogin()),
           ],
         ),
       ),
     );
   }
 
-  Widget _btn(BuildContext c, String t, Widget p) {
+  Widget btn(BuildContext c, String t, Widget p) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(6),
       child: ElevatedButton(
         onPressed: () => Navigator.push(c, MaterialPageRoute(builder: (_) => p)),
         child: Text(t),
