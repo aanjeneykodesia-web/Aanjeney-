@@ -5,13 +5,14 @@ import 'admin_dashboard.dart';
 class AdminLogin extends StatelessWidget {
   final auth = LocalAuthentication();
 
-  Future<void> login(BuildContext context) async {
-    bool ok = await auth.authenticate(
+  Future<void> authenticate(BuildContext context) async {
+    bool success = await auth.authenticate(
       localizedReason: 'Admin authentication required',
-      options: const AuthenticationOptions(biometricOnly: true),
+      options: AuthenticationOptions(biometricOnly: true),
     );
-    if (ok) {
-      Navigator.pushReplacement(
+
+    if (success) {
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => AdminDashboard()),
       );
@@ -24,8 +25,8 @@ class AdminLogin extends StatelessWidget {
       appBar: AppBar(title: const Text("Admin Login")),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => login(context),
-          child: const Text("Login with Face"),
+          onPressed: () => authenticate(context),
+          child: const Text("Login with Face/Fingerprint"),
         ),
       ),
     );
