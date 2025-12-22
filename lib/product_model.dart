@@ -1,6 +1,11 @@
 class Product {
-  final String name;
-  final int quantity;
+  String name;
+  double price;
+  int quantity;
 
-  Product(this.name, this.quantity);
+  Product({
+    required this.name,
+    required this.price,
+    required this.quantity,
+  });
 }
