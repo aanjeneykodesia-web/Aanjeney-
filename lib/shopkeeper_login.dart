@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'shopkeeper_dashboard.dart';
 
 class ShopkeeperLogin extends StatelessWidget {
-  final TextEditingController name = TextEditingController();
-  final TextEditingController phone = TextEditingController();
-  final TextEditingController location = TextEditingController();
+  ShopkeeperLogin({super.key});
+
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +16,34 @@ class ShopkeeperLogin extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            TextField(controller: name, decoration: const InputDecoration(labelText: "Shop Name")),
-            TextField(controller: phone, decoration: const InputDecoration(labelText: "Mobile Number")),
-            TextField(controller: location, decoration: const InputDecoration(labelText: "Shop Location")),
+            TextField(
+              controller: nameController,
+              decoration: const InputDecoration(labelText: "Shop Name"),
+            ),
+            TextField(
+              controller: phoneController,
+              decoration: const InputDecoration(labelText: "Mobile Number"),
+              keyboardType: TextInputType.phone,
+            ),
+            TextField(
+              controller: locationController,
+              decoration: const InputDecoration(labelText: "Shop Location"),
+            ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => ShopkeeperDashboard()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ShopkeeperDashboard(),
+                  ),
+                );
               },
               child: const Text("Login"),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-``
