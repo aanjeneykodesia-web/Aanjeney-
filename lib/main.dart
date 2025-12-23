@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginSelect(), // ❌ NOT const
+      title: 'Delivery App',
+      home: LoginSelect(),
     );
   }
 }
