@@ -5,9 +5,7 @@ class ShopkeeperDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Shopkeeper Dashboard")),
-      body: const Center(
-        child: Text("Place Orders & Edit Products"),
-      ),
+      body: const Center(child: Text("Place Order Here")),
     );
   }
 }
