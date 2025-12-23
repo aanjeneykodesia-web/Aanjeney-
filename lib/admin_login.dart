@@ -9,12 +9,9 @@ class AdminLogin extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => AdminDashboard()),
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (_) => AdminDashboard()));
           },
-          child: const Text("Login as Admin"),
+          child: const Text("Login (Face Auth Placeholder)"),
         ),
       ),
     );
