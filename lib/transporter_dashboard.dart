@@ -5,9 +5,7 @@ class TransporterDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Transporter Dashboard")),
-      body: const Center(
-        child: Text("Shopkeeper Location & Contact"),
-      ),
+      body: const Center(child: Text("Delivery Assigned")),
     );
   }
 }
