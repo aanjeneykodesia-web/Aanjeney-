@@ -5,9 +5,7 @@ class ManufacturerDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Manufacturer Dashboard")),
-      body: const Center(
-        child: Text("Approve Shopkeeper Orders"),
-      ),
+      body: const Center(child: Text("Approve Orders")),
     );
   }
 }
