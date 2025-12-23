@@ -27,7 +27,9 @@ class LoginSelect extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(6),
       child: ElevatedButton(
-        onPressed: () => Navigator.push(c, MaterialPageRoute(builder: (_) => p)),
+        onPressed: () {
+          Navigator.push(c, MaterialPageRoute(builder: (_) => p));
+        },
         child: Text(t),
       ),
     );
