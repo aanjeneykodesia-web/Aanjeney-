@@ -1,5 +1,7 @@
-name: supply_chain_app
-description: Supply chain management system
+name: delivery_app
+description: Delivery Management App
+publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
@@ -8,8 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.6
 
 flutter:
   uses-material-design: true
