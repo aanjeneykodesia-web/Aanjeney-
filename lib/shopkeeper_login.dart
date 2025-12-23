@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'shopkeeper_dashboard.dart';
 
 class ShopkeeperLogin extends StatelessWidget {
-  ShopkeeperLogin({super.key});
-
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController locationController = TextEditingController();
+  final phoneCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,29 +13,19 @@ class ShopkeeperLogin extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-              controller: nameController,
-              decoration: const InputDecoration(labelText: "Shop Name"),
-            ),
-            TextField(
-              controller: phoneController,
-              decoration: const InputDecoration(labelText: "Mobile Number"),
+              controller: phoneCtrl,
               keyboardType: TextInputType.phone,
-            ),
-            TextField(
-              controller: locationController,
-              decoration: const InputDecoration(labelText: "Shop Location"),
+              decoration: const InputDecoration(labelText: "Mobile Number"),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (_) => ShopkeeperDashboard(),
-                  ),
+                  MaterialPageRoute(builder: (_) => ShopkeeperDashboard()),
                 );
               },
-              child: const Text("Login"),
+              child: const Text("Login (OTP simulated)"),
             ),
           ],
         ),
