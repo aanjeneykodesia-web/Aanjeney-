@@ -8,10 +8,13 @@ class TransporterLogin extends StatelessWidget {
       appBar: AppBar(title: const Text("Transporter Login")),
       body: Center(
         child: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => TransporterDashboard()));
-          },
           child: const Text("Login"),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => TransporterDashboard()),
+            );
+          },
         ),
       ),
     );
