@@ -5,9 +5,7 @@ class AdminDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Admin Dashboard")),
-      body: const Center(
-        child: Text("View All Data & Manage Products"),
-      ),
+      body: const Center(child: Text("All Data Control")),
     );
   }
 }
